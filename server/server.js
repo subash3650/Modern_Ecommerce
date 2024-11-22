@@ -17,7 +17,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 
 
 mongoose.connect("mongodb+srv://UserData:subash123@cluster0.lcw4g.mongodb.net/myDatabase", {
-  connectTimeoutMS: 10000, // 10-second timeout
+  connectTimeoutMS: 100000, // 10-second timeout
 })
 .then(() => console.log("MongoDB connected"))
 .catch((error) => console.log("Connection error:", error));
@@ -51,7 +51,6 @@ app.use("/api/shop/address", shopAddressRouter);
 app.use("/api/shop/order", shopOrderRouter);
 app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
-
 app.use("/api/common/feature", commonFeatureRouter);
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
