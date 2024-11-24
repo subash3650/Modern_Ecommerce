@@ -16,9 +16,7 @@ const shopReviewRouter = require("./routes/shop/review-routes");
 const commonFeatureRouter = require("./routes/common/feature-routes");
 
 
-mongoose.connect("mongodb+srv://UserData:subash123@cluster0.lcw4g.mongodb.net/myDatabase", {
-  connectTimeoutMS: 100000, // 10-second timeout
-})
+mongoose.connect("mongodb+srv://UserData:subash123@cluster0.lcw4g.mongodb.net/myDatabase")
 .then(() => console.log("MongoDB connected"))
 .catch((error) => console.log("Connection error:", error));
 const app = express();
